@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy 6 Months of Dating</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom right, #ffccd5, #ffe6eb);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #d6336c;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .container {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 2.8em;
+      margin-bottom: 10px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    p {
+      font-size: 1.2em;
+      max-width: 600px;
+      margin: 10px auto 20px;
+      animation: fadeIn 3s ease-in-out;
+    }
+
+    video {
+      width: 90%;
+      max-width: 600px;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      margin-top: 20px;
+    }
+
+    .hearts {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .heart {
+      position: absolute;
+      color: #ff6b81;
+      font-size: 24px;
+      animation: float 6s linear infinite;
+      user-select: none;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) scale(0.5);
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) scale(1);
+        opacity: 0;
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Selamat 7 Bulan hubungan ini, Cintaku 💖</h1>
+    <p>
+      Terima kasih telah menjadi bagian dari hidupku. Setiap detik bersamamu adalah berkah tak ternilai.
+      Semoga kita terus tumbuh bersama dalam cinta, i love you so much❤️.
+    </p>
+    <video id="Video" autoplay muted playsinline controls>
+      <source src="Video.mp4" type="video/mp4"/>
+      Maaf, browser Anda tidak mendukung pemutaran video.
+    </video>
+    <br />
+    <a href="Video.mp4" download="Video.mp4" style="color:#d6336c; font-size:1.1em; text-decoration:underline;">Download Video</a>
+  </div>
+
+  <div class="hearts"></div>
+
+  <script>
+    const heartsContainer = document.querySelector('.hearts');
+    setInterval(() => {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = (Math.random() * 20 + 10) + "px";
+      heart.innerHTML = "❤️🫵";
+      heartsContainer.appendChild(heart);
+      setTimeout(() => heart.remove(), 6000);
+    }, 500);
+  </script>
+</body>
+</html>
